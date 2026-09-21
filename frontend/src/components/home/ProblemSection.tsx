@@ -52,15 +52,15 @@ function FolderRow({
   tone,
 }: (typeof FOLDERS)[number]) {
   return (
-    <li className="flex items-center gap-3 border-b border-neutral-100 py-3 last:border-0">
-      <span className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${tone}`}>
-        <svg viewBox="0 0 24 24" className="size-5 fill-white/95" aria-hidden>
+    <li className="flex items-center gap-2.5 border-b border-neutral-100 py-2 last:border-0">
+      <span className={`flex size-7 shrink-0 items-center justify-center rounded-md ${tone}`}>
+        <svg viewBox="0 0 24 24" className="size-4 fill-white/95" aria-hidden>
           <path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z" />
         </svg>
       </span>
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-semibold text-neutral-800">{name}</p>
-        <p className="text-xs text-neutral-500">
+        <p className="truncate text-[13px] font-semibold text-neutral-800">{name}</p>
+        <p className="text-[11px] text-neutral-500">
           {count} {unit}
         </p>
       </div>
@@ -83,13 +83,13 @@ function ProblemSectionVisual() {
       <img
         src={visualSrc}
         alt=""
-        className="absolute left-[18%] top-6 h-[78%] w-[38%] rounded-lg object-cover object-center opacity-90 shadow-lg"
-        width={280}
+        className="absolute left-[12%] top-6 h-[78%] w-[48%] max-w-[17.5rem] rounded-lg object-cover object-[55%_center] opacity-90 shadow-lg sm:max-w-[19rem]"
+        width={304}
         height={420}
         decoding="async"
       />
 
-      <div className="absolute left-0 top-[12%] z-10 w-[min(100%,17.5rem)] rounded-2xl bg-white p-4 shadow-[0_18px_40px_rgba(15,23,42,0.12)] sm:w-72">
+      <div className="absolute left-0 top-[12%] z-10 w-[min(100%,14.5rem)] rounded-xl bg-white p-3 shadow-[0_14px_32px_rgba(15,23,42,0.1)] sm:w-60">
         <ul>{FOLDERS.map((folder) => <FolderRow key={folder.name} {...folder} />)}</ul>
       </div>
 
