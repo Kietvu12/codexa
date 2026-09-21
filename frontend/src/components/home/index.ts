@@ -1,4 +1,5 @@
 export { CtaSection } from './CtaSection'
 export { FaqSection } from './FaqSection'
+export { FeaturesSection } from './FeaturesSection'
 export { ProblemSection } from './ProblemSection'
 export { ProcessSection } from './ProcessSection'

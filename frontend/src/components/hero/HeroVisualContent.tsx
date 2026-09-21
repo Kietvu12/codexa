@@ -23,7 +23,7 @@ export function HeroVisualContent() {
           </p>
         </MotionEnterItem>
         <MotionEnterItem>
-          <h1 className="mt-3 whitespace-nowrap text-[clamp(2.35rem,4.8vw+1.5rem,6.25rem)] font-bold leading-none tracking-tight sm:mt-4">
+          <h1 className="mt-3 max-w-[14ch] text-[clamp(2rem,8vw+0.75rem,6.25rem)] font-bold leading-[1.02] tracking-tight sm:mt-4 sm:max-w-none sm:leading-none">
             CDE BIM Codexa
           </h1>
         </MotionEnterItem>
@@ -33,15 +33,12 @@ export function HeroVisualContent() {
           </p>
         </MotionEnterItem>
         <MotionEnterItem>
-          <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-7 sm:gap-4">
-            <button
-              type="button"
-              className="inline-flex h-(--height-hero-cta) items-center gap-2 rounded-full bg-brand-red px-6 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(239,35,60,0.5)] transition-colors hover:bg-brand-red-hover sm:px-7"
-            >
+          <div className="mt-6 flex w-full max-w-md flex-col gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <button type="button" className="btn-primary btn-hover-fx w-full sm:w-auto">
               Dùng thử miễn phí
               <ArrowRightIcon />
             </button>
-            <button type="button" className="btn-video">
+            <button type="button" className="btn-video btn-hover-fx w-full sm:w-auto">
               <span className="btn-video__circle">
                 <svg viewBox="0 0 24 24" aria-hidden>
                   <path d="M6 4l14 8-14 8V4z" />

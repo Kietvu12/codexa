@@ -8,8 +8,9 @@ import type { ReactNode } from 'react'
 
 export const easeOut = [0.22, 1, 0.36, 1] as const
 
+/** Chạy lại animation mỗi lần phần tử vào viewport (scroll lên/xuống). */
 export const viewportOnce = {
-  once: true,
+  once: false,
   amount: 0.2,
   margin: '0px 0px -60px 0px',
 } as const

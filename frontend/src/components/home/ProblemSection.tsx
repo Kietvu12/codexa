@@ -70,7 +70,7 @@ function FolderRow({
 
 function ProblemSectionVisual() {
   return (
-    <div className="relative mx-auto min-h-[420px] w-full max-w-xl lg:max-w-none lg:min-h-[480px]">
+    <div className="relative mx-auto min-h-[22rem] w-full max-w-xl overflow-hidden sm:min-h-[26rem] lg:max-w-none lg:min-h-[480px]">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
         aria-hidden
@@ -83,17 +83,17 @@ function ProblemSectionVisual() {
       <img
         src={visualSrc}
         alt=""
-        className="absolute left-[12%] top-6 h-[78%] w-[48%] max-w-[17.5rem] rounded-lg object-cover object-[55%_center] opacity-90 shadow-lg sm:max-w-[19rem]"
+        className="absolute left-[8%] top-8 h-[72%] w-[44%] max-w-[9.5rem] rounded-lg object-cover object-[55%_center] opacity-90 shadow-lg sm:left-[12%] sm:top-6 sm:h-[78%] sm:w-[48%] sm:max-w-[19rem]"
         width={304}
         height={420}
         decoding="async"
       />
 
-      <div className="absolute left-0 top-[12%] z-10 w-[min(100%,14.5rem)] rounded-xl bg-white p-3 shadow-[0_14px_32px_rgba(15,23,42,0.1)] sm:w-60">
+      <div className="absolute left-0 top-[10%] z-10 w-[min(100%,13rem)] rounded-xl bg-white p-2.5 shadow-[0_14px_32px_rgba(15,23,42,0.1)] sm:top-[12%] sm:w-60 sm:p-3">
         <ul>{FOLDERS.map((folder) => <FolderRow key={folder.name} {...folder} />)}</ul>
       </div>
 
-      <div className="absolute bottom-4 right-0 z-20 w-[min(100%,14rem)] sm:w-56">
+      <div className="absolute right-0 bottom-2 z-20 w-[min(100%,11.5rem)] sm:bottom-4 sm:w-56">
         <div className="overflow-hidden rounded-2xl border-4 border-white shadow-[0_20px_44px_rgba(15,23,42,0.18)]">
           <img
             src={visualSrc}
@@ -150,7 +150,7 @@ export function ProblemSection() {
           </Stagger>
           <button
             type="button"
-            className="mt-9 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:border-neutral-400 hover:bg-neutral-50"
+            className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:border-neutral-400 hover:bg-neutral-50 sm:w-auto"
           >
             Khám phá giải pháp
             <ArrowRightIcon />

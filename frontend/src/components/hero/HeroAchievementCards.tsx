@@ -33,7 +33,7 @@ function useCountUp(target: number, active: boolean) {
 
 function AnimatedStatValue({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.45 })
+  const isInView = useInView(ref, { once: false, amount: 0.45 })
 
   const count = useCountUp(value, isInView)
 
@@ -150,20 +150,18 @@ function StatCard({ value, suffix, label, icon }: StatItem) {
 
   return (
     <motion.article
-      className="stat-card"
+      className="stat-card flex flex-col"
       whileHover={reduceMotion ? undefined : { y: -4, transition: { duration: 0.2 } }}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="text-white/90">{icon}</div>
-        <p
-          className="text-right text-[2rem] font-bold leading-none tracking-tight text-white sm:text-[2.125rem]"
-          aria-label={`${value}${suffix ?? ''}`}
-        >
-          <AnimatedStatValue value={value} />
-          {suffix ? <span className="text-brand-red">{suffix}</span> : null}
-        </p>
-      </div>
-      <p className="mt-4 text-sm leading-snug text-white/75 sm:text-[15px]">{label}</p>
+      <div className="text-white/90">{icon}</div>
+      <p
+        className="mt-3 text-[2rem] font-bold leading-none tracking-tight text-white sm:mt-4 sm:text-[2.125rem]"
+        aria-label={`${value}${suffix ?? ''}`}
+      >
+        <AnimatedStatValue value={value} />
+        {suffix ? <span className="text-brand-red">{suffix}</span> : null}
+      </p>
+      <p className="mt-2 text-base font-bold leading-snug text-white sm:mt-2.5 sm:text-lg">{label}</p>
     </motion.article>
   )
 }

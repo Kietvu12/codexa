@@ -29,7 +29,10 @@ const FLOW_DURATION = 2.35
 const STEP_INTERVAL = FLOW_DURATION / STEPS.length
 const TIMELINE_X = '1.375rem'
 
-const processVisualSrc = new URL('../../assets/HeroVisual.png', import.meta.url).href
+const processVisualSrc = new URL(
+  '../../assets/ChatGPT Image Sep 21, 2026, 11_20_14 AM.png',
+  import.meta.url,
+).href
 
 function ArrowRightIcon() {
   return (
@@ -48,7 +51,7 @@ function ArrowRightIcon() {
 function ProcessSteps() {
   const reduceMotion = useReducedMotion()
   const listRef = useRef<HTMLOListElement>(null)
-  const isInView = useInView(listRef, { once: true, amount: 0.35 })
+  const isInView = useInView(listRef, { once: false, amount: 0.35 })
   const [activeIndex, setActiveIndex] = useState(() => (reduceMotion ? STEPS.length - 1 : -1))
   const [flowDone, setFlowDone] = useState(() => reduceMotion)
 
@@ -97,18 +100,20 @@ function ProcessSteps() {
             transition={{ duration: FLOW_DURATION, ease: easeOut }}
             aria-hidden
           />
-          <motion.div
-            className="process-timeline-pulse absolute z-20 size-2.5 -translate-x-1/2 rounded-full bg-cyan-100"
-            style={{ left: TIMELINE_X }}
-            initial={{ top: '1.25rem', opacity: 0 }}
-            animate={
-              isInView
-                ? { top: 'calc(100% - 1.25rem)', opacity: [0, 1, 1, 0.35] }
-                : { top: '1.25rem', opacity: 0 }
-            }
-            transition={{ duration: FLOW_DURATION, ease: easeOut }}
-            aria-hidden
-          />
+          {!flowDone && (
+            <motion.div
+              className="process-timeline-pulse absolute z-20 size-2.5 -translate-x-1/2 rounded-full bg-cyan-100"
+              style={{ left: TIMELINE_X }}
+              initial={{ top: '1.25rem', opacity: 0 }}
+              animate={
+                isInView
+                  ? { top: 'calc(100% - 1.25rem)', opacity: [0, 1, 1, 0] }
+                  : { top: '1.25rem', opacity: 0 }
+              }
+              transition={{ duration: FLOW_DURATION, ease: easeOut }}
+              aria-hidden
+            />
+          )}
         </>
       )}
 
@@ -194,8 +199,8 @@ function ProcessVisual({ placement }: { placement: 'bleed' | 'stacked' }) {
         alt={isBleed ? '' : 'Công trình xây dựng'}
         className={
           isBleed
-            ? 'absolute inset-0 h-full w-full object-cover object-[58%_center] [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.45)_8%,black_22%,black_100%)]'
-            : 'absolute inset-0 h-full w-full object-cover object-center [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.35)_6%,black_20%,black_100%)]'
+            ? 'absolute inset-0 h-full w-full object-cover object-[72%_center] [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.5)_10%,black_24%,black_100%)]'
+            : 'absolute inset-0 h-full w-full object-cover object-[68%_center] [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.4)_8%,black_22%,black_100%)]'
         }
         width={800}
         height={600}
@@ -204,15 +209,15 @@ function ProcessVisual({ placement }: { placement: 'bleed' | 'stacked' }) {
       <div
         className={
           isBleed
-            ? 'absolute inset-0 bg-linear-to-r from-brand-navy from-0% via-brand-navy/70 via-[24%] to-brand-navy/5 to-[52%]'
-            : 'absolute inset-0 bg-linear-to-r from-brand-navy/90 from-0% via-brand-navy/40 via-[35%] to-transparent to-[70%]'
+            ? 'absolute inset-0 bg-linear-to-r from-brand-navy/90 from-0% via-brand-navy/45 via-[30%] to-transparent to-[58%]'
+            : 'absolute inset-0 bg-linear-to-r from-brand-navy/85 from-0% via-brand-navy/35 via-[28%] to-transparent to-[65%]'
         }
         aria-hidden
       />
       {isBleed ? (
         <div className="process-visual-blend pointer-events-none absolute inset-y-0 left-0 z-10" aria-hidden />
       ) : null}
-      <div className="absolute inset-0 bg-sky-950/25 mix-blend-multiply" aria-hidden />
+      <div className="absolute inset-0 bg-sky-950/15 mix-blend-multiply" aria-hidden />
       <p
         className={
           isBleed
@@ -252,7 +257,7 @@ export function ProcessSection() {
             <p className="mt-4 max-w-md text-base leading-relaxed text-white/75 sm:text-lg">
               Triển khai nhanh, dễ sử dụng, phù hợp với mọi quy mô dự án.
             </p>
-            <button type="button" className="btn-glass-outline mt-8 sm:mt-9">
+            <button type="button" className="btn-glass-outline mt-8 w-full justify-center sm:mt-9 sm:w-auto">
               Xem chi tiết quy trình
               <ArrowRightIcon />
             </button>

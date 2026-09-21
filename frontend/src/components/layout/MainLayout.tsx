@@ -12,7 +12,7 @@ type MainLayoutProps = {
 
 export function MainLayout({ children, activeNav, hero }: MainLayoutProps) {
   return (
-    <div className="flex min-h-svh flex-col">
+    <div className="flex min-h-svh flex-col overflow-x-clip">
       {hero ?? <Header activeNav={activeNav} />}
       <main className="flex-1">{children}</main>
       <Footer />

@@ -14,7 +14,7 @@ export function HeroVisual({ activeNav = 'trang-chu', children }: HeroVisualProp
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="relative isolate min-h-[min(680px,82svh)] text-white">
+    <section className="relative isolate min-h-[min(540px,88svh)] text-white sm:min-h-[min(620px,85svh)] lg:min-h-[min(680px,82svh)]">
       {reduceMotion ? (
         <img
           src={heroBackgroundSrc}
@@ -40,12 +40,12 @@ export function HeroVisual({ activeNav = 'trang-chu', children }: HeroVisualProp
         />
       )}
       <div
-        className="absolute inset-0 bg-linear-to-r from-brand-navy/75 via-brand-navy/35 to-brand-navy/15"
+        className="absolute inset-0 bg-linear-to-b from-brand-navy/88 via-brand-navy/55 to-brand-navy/40 sm:bg-linear-to-r sm:from-brand-navy/75 sm:via-brand-navy/35 sm:to-brand-navy/15"
         aria-hidden
       />
-      <div className="relative z-10 flex min-h-[min(680px,82svh)] flex-col">
+      <div className="relative z-10 flex min-h-[min(540px,88svh)] flex-col sm:min-h-[min(620px,85svh)] lg:min-h-[min(680px,82svh)]">
         <Header activeNav={activeNav} variant="overlay" />
-        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-start justify-center px-4 pb-8 pt-2 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12">
+        <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-start justify-center px-4 pb-10 pt-4 sm:px-6 sm:pb-10 sm:pt-2 lg:px-10 lg:pb-12">
           {children}
         </div>
       </div>

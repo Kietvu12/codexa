@@ -78,7 +78,7 @@ export function FaqSection() {
           </p>
           <button
             type="button"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:border-neutral-400 hover:bg-neutral-50"
+            className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-brand-navy transition-colors hover:border-neutral-400 hover:bg-neutral-50 sm:w-auto"
           >
             Xem tất cả câu hỏi
             <ArrowRightIcon />

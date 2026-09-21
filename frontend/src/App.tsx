@@ -1,5 +1,11 @@
 import { HeroAchievementCards, HeroVisual, HeroVisualContent } from './components/hero'
-import { CtaSection, FaqSection, ProblemSection, ProcessSection } from './components/home'
+import {
+  CtaSection,
+  FaqSection,
+  FeaturesSection,
+  ProblemSection,
+  ProcessSection,
+} from './components/home'
 import { MainLayout } from './components/layout'
 
 function App() {
@@ -16,6 +22,7 @@ function App() {
       }
     >
       <ProblemSection />
+      <FeaturesSection />
       <ProcessSection />
       <FaqSection />
       <CtaSection />
